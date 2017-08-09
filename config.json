@@ -1,0 +1,32 @@
+{
+"handlers": [
+	{
+		"method": "get",
+		"path":   "/",
+		"sql":    "SELECT * FROM 'posts'"
+	},
+	{
+		"method": "get",
+		"path":   "/",
+		"query":  ["after"],
+		"sql":    "SELECT * FROM 'posts' WHERE `created` > :after"
+	},
+	{
+		"method": "get",
+		"path":   "/(?P<id>\d+)",
+		"sql":    "SELECT * FROM 'posts' WHERE 'id' = :id"
+	},
+	{
+		"method": "post",
+		"path":   "/",
+		"data":   ["comment"],
+		"sql":    "INSERT INTO 'posts' ('comment') VALUES (:comment)"
+	}
+],
+"static": [
+	"about.htm"
+],
+"errors": {
+	404: "Resource could not be found"
+}
+}
