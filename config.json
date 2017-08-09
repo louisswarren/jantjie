@@ -28,5 +28,15 @@
 ],
 "errors": {
 	404: "Resource could not be found"
-}
+},
+"setup": [
+	[
+        "CREATE TABLE posts",
+		"(id INTEGER PRIMARY KEY AUTOINCREMENT,",
+		"comment TEXT, created TIMESTAMP DEFAULT CURRENT_TIMESTAMP)"
+	],
+    "INSERT INTO posts (comment) VALUES ('Hello')",
+    "INSERT INTO posts (comment) VALUES ('How are you?')",
+    "INSERT INTO posts (comment) VALUES ('Goodbye')"
+]
 }
